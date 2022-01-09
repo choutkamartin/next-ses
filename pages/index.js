@@ -1,7 +1,12 @@
+import Link from "next/link";
+
 export default function Index() {
   return (
     <div>
-      Hit <a href="/api/email">API route</a>
+      Hit{" "}
+      <Link href="/api/email">
+        <a>API route</a>
+      </Link>
     </div>
   );
 }
