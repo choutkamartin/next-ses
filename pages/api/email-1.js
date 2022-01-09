@@ -16,22 +16,16 @@ export default async function handler(req, res) {
       Body: {
         Html: {
           Charset: "UTF-8",
-          Data: `<html>
-                  <body>
-                    From: Test
-                    <br />
-                    Message: Test
-                  </body>
-              </html>`,
+          Data: "<div>Test</div>",
         },
         Text: {
           Charset: "UTF-8",
-          Data: "",
+          Data: "Test",
         },
       },
       Subject: {
         Charset: "UTF-8",
-        Data: "From Contact Form",
+        Data: "Test",
       },
     },
     Source: process.env.EMAIL,
