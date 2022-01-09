@@ -12,7 +12,7 @@ export default async function handler(req, res) {
 
   const params = {
     Destination: {
-      ToAddresses: [process.env.EMAIL],
+      ToAddresses: ["success@simulator.amazonses.com"],
     },
     Message: {
       Body: {

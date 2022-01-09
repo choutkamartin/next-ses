@@ -10,7 +10,7 @@ export default async function handler(req, res) {
   const ses = new AWS.SES({ apiVersion: "2010-12-01" });
   const params = {
     Destination: {
-      ToAddresses: [process.env.EMAIL],
+      ToAddresses: ["success@simulator.amazonses.com"],
     },
     Message: {
       Body: {
