@@ -31,21 +31,17 @@ export default async function handler(req, res) {
     Source: process.env.EMAIL,
   };
 
-  return ses
+  ses
     .sendEmail(params)
     .promise()
-    .then((data) => {
-      console.log(data);
-      res.json({
-        statusCode: 200,
-        body: `Message sent.`,
+    .then(() => {
+      res.status(200).json({
+        message: "Message sent.",
       });
     })
     .catch((error) => {
-      console.error(error);
-      res.json({
-        statusCode: 500,
-        body: `Error occured: ${error}`,
+      res.status(500).json({
+        message: `Error occured: ${error}`,
       });
     });
 }
