@@ -5,7 +5,6 @@ export default async function handler(req, res) {
   const credentials = {
     accessKeyId: process.env.AWS_SDK_ACCESS_KEY_ID,
     secretAccessKey: process.env.AWS_SDK_SECRET_ACCESS_KEY,
-    region: process.env.AWS_SDK_REGION,
   };
 
   const sesClient = new SESClient({
@@ -15,7 +14,7 @@ export default async function handler(req, res) {
 
   const params = {
     Destination: {
-      ToAddresses: ["success@simulator.amazonses.com"],
+      ToAddresses: [process.env.EMAIL],
     },
     Message: {
       Body: {
