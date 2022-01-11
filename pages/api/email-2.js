@@ -8,7 +8,10 @@ export default async function handler(req, res) {
     region: process.env.AWS_SDK_REGION,
   };
 
-  const sesClient = new SESClient(credentials);
+  const sesClient = new SESClient({
+    region: process.env.AWS_SDK_REGION,
+    credentials: credentials,
+  });
 
   const params = {
     Destination: {
